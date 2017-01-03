@@ -1,31 +1,14 @@
-<?php
-/**
- * Twenty Seventeen: Color Patterns
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- */
+<?php //Pleiades17: Color Patterns
 
-/**
- * Generate the CSS for the current custom color scheme.
- */
-function twentyseventeen_custom_colors_css() {
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
-
-	/**
-	 * Filter Twenty Seventeen default saturation level.
-	 *
-	 * @since Twenty Seventeen 1.0
-	 *
-	 * @param $saturation integer
-	 */
-	$saturation = absint( apply_filters( 'twentyseventeen_custom_colors_saturation', 50 ) );
-	$reduced_saturation = ( .8 * $saturation ) . '%';
+//generate the CSS for the current custom color scheme
+function pleiades17_custom_colors_css() {
+	$hue = absint(get_theme_mod('colorscheme_hue', 250));
+	$saturation = absint(apply_filters('pleiades17_custom_colors_saturation', 40));
+	$reduced_saturation = (.5 * $saturation) . '%';
 	$saturation = $saturation . '%';
 	$css = '
 /**
- * Twenty Seventeen: Color Patterns
+ * Pleiades17: Color Patterns
  *
  * Colors are ordered from dark to light.
  */
@@ -86,7 +69,7 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .widget .widget-title a:hover,
 .colors-custom .widget ul li a:focus,
 .colors-custom .widget ul li a:hover {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 0% ); /* base: #000; */
+	color: hsl(' . $hue . ', ' . $saturation . ', 0%); /* base: #000; */
 }
 
 .colors-custom .entry-content a,
@@ -95,15 +78,15 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .site-footer .widget-area a,
 .colors-custom .posts-navigation a,
 .colors-custom .widget_authors a strong {
-	-webkit-box-shadow: inset 0 -1px 0 hsl( ' . $hue . ', ' . $saturation  . ', 6% ); /* base: rgba(15, 15, 15, 1); */
-	box-shadow: inset 0 -1px 0 hsl( ' . $hue . ', ' . $saturation . ', 6% ); /* base: rgba(15, 15, 15, 1); */
+	-webkit-box-shadow: inset 0 -1px 0 hsl(' . $hue . ', ' . $saturation  . ', 6%); /* base: rgba(15, 15, 15, 1); */
+	box-shadow: inset 0 -1px 0 hsl(' . $hue . ', ' . $saturation . ', 6%); /* base: rgba(15, 15, 15, 1); */
 }
 
 .colors-custom button,
 .colors-custom input[type="button"],
 .colors-custom input[type="submit"],
 .colors-custom .entry-footer .edit-link a.post-edit-link {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); /* base: #222; */
+	background-color: hsl(' . $hue . ', ' . $saturation . ', 13%); /* base: #222; */
 }
 
 .colors-custom input[type="text"]:focus,
@@ -135,7 +118,7 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .menu-toggle,
 .colors-custom .page .panel-content .entry-title,
 .colors-custom .page-title,
-.colors-custom.page:not(.twentyseventeen-front-page) .entry-title,
+.colors-custom.page:not(.pleiades17-front-page) .entry-title,
 .colors-custom .page-links a .page-number,
 .colors-custom .comment-metadata a.comment-edit-link,
 .colors-custom .comment-reply-link .icon,
@@ -144,8 +127,8 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .post-navigation a:focus .icon,
 .colors-custom .post-navigation a:hover .icon,
 .colors-custom .site-content .site-content-light,
-.colors-custom .twentyseventeen-panel .recent-posts .entry-header .edit-link {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 13% ); /* base: #222; */
+.colors-custom .pleiades17-panel .recent-posts .entry-header .edit-link {
+	color: hsl(' . $hue . ', ' . $saturation . ', 13%); /* base: #222; */
 }
 
 .colors-custom .entry-content a:focus,
@@ -200,8 +183,8 @@ function twentyseventeen_custom_colors_css() {
 .colors-custom .widget .widget-title a:hover,
 .colors-custom .widget ul li a:focus,
 .colors-custom .widget ul li a:hover {
-	-webkit-box-shadow: inset 0 0 0 hsl( ' . $hue . ', ' . $saturation . ', 13% ), 0 3px 0 hsl( ' . $hue . ', ' . $saturation . ', 13% );
-	box-shadow: inset 0 0 0 hsl( ' . $hue . ', ' . $saturation. ' , 13% ), 0 3px 0 hsl( ' . $hue . ', ' . $saturation . ', 13% );
+	-webkit-box-shadow: inset 0 0 0 hsl(' . $hue . ', ' . $saturation . ', 13% ), 0 3px 0 hsl( ' . $hue . ', ' . $saturation . ', 13%);
+	box-shadow: inset 0 0 0 hsl(' . $hue . ', ' . $saturation. ' , 13%), 0 3px 0 hsl(' . $hue . ', ' . $saturation . ', 13%);
 }
 
 body.colors-custom,
@@ -214,19 +197,19 @@ body.colors-custom,
 .colors-custom h6,
 .colors-custom label,
 .colors-custom .entry-title a,
-.colors-custom.twentyseventeen-front-page .panel-content .recent-posts article,
+.colors-custom.pleiades17-front-page .panel-content .recent-posts article,
 .colors-custom .entry-footer .cat-links a,
 .colors-custom .entry-footer .tags-links a,
 .colors-custom .format-quote blockquote,
 .colors-custom .nav-title,
 .colors-custom .comment-body,
 .colors-custom .site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album {
-	color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
+	color: hsl(' . $hue . ', ' . $reduced_saturation . ', 20%); /* base: #333; */
 }
 
 .colors-custom .social-navigation a:hover,
 .colors-custom .social-navigation a:focus {
-	background: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
+	background: hsl(' . $hue . ', ' . $reduced_saturation . ', 20%); /* base: #333; */
 }
 
 .colors-custom input[type="text"]:focus,
@@ -246,7 +229,7 @@ body.colors-custom,
 .colors-custom input[type="color"]:focus,
 .colors-custom textarea:focus,
 .bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
-	border-color: hsl( ' . $hue . ', ' . $reduced_saturation . ', 20% ); /* base: #333; */
+	border-color: hsl(' . $hue . ', ' . $reduced_saturation . ', 20%); /* base: #333; */
 }
 
 .colors-custom h2,
@@ -274,12 +257,12 @@ body.colors-custom,
 .colors-custom .site-info a,
 .colors-custom .wp-caption,
 .colors-custom .gallery-caption {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 40% ); /* base: #666; */
+	color: hsl(' . $hue . ', ' . $saturation . ', 40%); /* base: #666; */
 }
 
 .colors-custom abbr,
 .colors-custom acronym {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 40% ); /* base: #666; */
+	border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 40%); /* base: #666; */
 }
 
 .colors-custom h5,
@@ -299,7 +282,7 @@ body.colors-custom,
 .colors-custom .navigation-top .current_page_item > a,
 .colors-custom .main-navigation a:hover,
 .colors-custom .site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-artist {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
+	color: hsl(' . $hue . ', ' . $saturation . ', 46%); /* base: #767676; */
 }
 
 .colors-custom button:hover,
@@ -317,7 +300,7 @@ body.colors-custom,
 .colors-custom .next.page-numbers:hover,
 .colors-custom .site-content .wp-playlist-light .wp-playlist-item:hover,
 .colors-custom .site-content .wp-playlist-light .wp-playlist-item:focus {
-	background: hsl( ' . esc_attr( $hue ) . ', ' . esc_attr( $saturation ) . ', 46% ); /* base: #767676; */
+	background: hsl(' . esc_attr( $hue ) . ', ' . esc_attr($saturation) . ', 46%); /* base: #767676; */
 }
 
 .colors-custom button.secondary:hover,
@@ -331,7 +314,7 @@ body.colors-custom,
 .colors-custom input[type="submit"].secondary:hover,
 .colors-custom input[type="submit"].secondary:focus,
 .colors-custom hr {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	background: hsl(' . $hue . ', ' . $saturation . ', 73%); /* base: #bbb; */
 }
 
 .colors-custom input[type="text"],
@@ -358,16 +341,16 @@ body.colors-custom,
 .colors-custom .widget.widget_tag_cloud a:focus,
 .colors-custom .wp_widget_tag_cloud a:hover,
 .colors-custom .wp_widget_tag_cloud a:focus {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	border-color: hsl(' . $hue . ', ' . $saturation . ', 73%); /* base: #bbb; */
 }
 
 .colors-custom thead th {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 73%); /* base: #bbb; */
 }
 
 .colors-custom .entry-footer .cat-links .icon,
 .colors-custom .entry-footer .tags-links .icon {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+	color: hsl(' . $hue . ', ' . $saturation . ', 73%); /* base: #bbb; */
 }
 
 .colors-custom button.secondary,
@@ -377,28 +360,28 @@ body.colors-custom,
 .colors-custom input[type="submit"].secondary,
 .colors-custom .prev.page-numbers,
 .colors-custom .next.page-numbers {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	background-color: hsl(' . $hue . ', ' . $saturation . ', 87%); /* base: #ddd; */
 }
 
 .colors-custom .widget .tagcloud a,
 .colors-custom .widget.widget_tag_cloud a,
 .colors-custom .wp_widget_tag_cloud a {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	border-color: hsl(' . $hue . ', ' . $saturation . ', 87%); /* base: #ddd; */
 }
 
-.colors-custom.twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child),
+.colors-custom.pleiades17-front-page article:not(.has-post-thumbnail):not(:first-child),
 .colors-custom .widget ul li {
-	border-top-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	border-top-color: hsl(' . $hue . ', ' . $saturation . ', 87%); /* base: #ddd; */
 }
 
 .colors-custom .widget ul li {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 87% ); /* base: #ddd; */
+	border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 87%); /* base: #ddd; */
 }
 
 .colors-custom pre,
 .colors-custom mark,
 .colors-custom ins {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	background: hsl(' . $hue . ', ' . $saturation . ', 93%); /* base: #eee; */
 }
 
 .colors-custom .navigation-top,
@@ -407,7 +390,7 @@ body.colors-custom,
 .colors-custom .comments-pagination,
 .colors-custom .entry-footer,
 .colors-custom .site-footer {
-	border-top-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	border-top-color: hsl(' . $hue . ', ' . $saturation . ', 93%); /* base: #eee; */
 }
 
 .colors-custom .navigation-top,
@@ -416,16 +399,16 @@ body.colors-custom,
 .colors-custom .single-featured-image-header,
 .colors-custom .site-content .wp-playlist-light .wp-playlist-item,
 .colors-custom tr {
-	border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 93%); /* base: #eee; */
 }
 
 .colors-custom .site-content .wp-playlist-light {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 93% ); /* base: #eee; */
+	border-color: hsl(' . $hue . ', ' . $saturation . ', 93%); /* base: #eee; */
 }
 
 .colors-custom .site-header,
 .colors-custom .single-featured-image-header {
-	background-color: hsl( ' . $hue . ', ' . $saturation . ', 98% ); /* base: #fafafa; */
+	background-color: hsl(' . $hue . ', ' . $saturation . ', 98%); /* base: #fafafa; */
 }
 
 .colors-custom button,
@@ -448,19 +431,19 @@ body.colors-custom,
 .colors-custom.has-header-video .site-title a,
 .colors-custom.has-header-image .site-description,
 .colors-custom.has-header-video .site-description {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+	color: hsl(' . $hue . ', ' . $saturation . ', 100%); /* base: #fff; */
 }
 
 body.colors-custom,
 .colors-custom .navigation-top,
 .colors-custom .main-navigation ul {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+	background: hsl(' . $hue . ', ' . $saturation . ', 100%); /* base: #fff; */
 }
 
 .colors-custom .widget ul li a,
 .colors-custom .site-footer .widget-area ul li a {
-	-webkit-box-shadow: inset 0 -1px 0 hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: rgba(255, 255, 255, 1); */
-	box-shadow: inset 0 -1px 0 hsl( ' . $hue . ', ' . $saturation . ', 100% );  /* base: rgba(255, 255, 255, 1); */
+	-webkit-box-shadow: inset 0 -1px 0 hsl(' . $hue . ', ' . $saturation . ', 100%); /* base: rgba(255, 255, 255, 1); */
+	box-shadow: inset 0 -1px 0 hsl(' . $hue . ', ' . $saturation . ', 100%);  /* base: rgba(255, 255, 255, 1); */
 }
 
 .colors-custom .menu-toggle,
@@ -516,35 +499,35 @@ body.colors-custom,
 
 	.colors-custom .nav-links .nav-previous .nav-title .icon,
 	.colors-custom .nav-links .nav-next .nav-title .icon {
-		color: hsl( ' . $hue . ', ' . $saturation . ', 20% ); /* base: #222; */
+		color: hsl(' . $hue . ', ' . $saturation . ', 20%); /* base: #222; */
 	}
 
 	.colors-custom .main-navigation li li:hover,
 	.colors-custom .main-navigation li li.focus {
-		background: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */
+		background: hsl(' . $hue . ', ' . $saturation . ', 46%); /* base: #767676; */
 	}
 
 	.colors-custom .navigation-top .menu-scroll-down {
-		color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */;
+		color: hsl(' . $hue . ', ' . $saturation . ', 46%); /* base: #767676; */;
 	}
 
 	.colors-custom abbr[title] {
-		border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 46% ); /* base: #767676; */;
+		border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 46%); /* base: #767676; */;
 	}
 
 	.colors-custom .main-navigation ul ul {
-		border-color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
-		background: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+		border-color: hsl(' . $hue . ', ' . $saturation . ', 70%); /* base: #bbb; */
+		background: hsl(' . $hue . ', ' . $saturation . ', 90%); /* base: #fff; */
 	}
 
 	.colors-custom .main-navigation ul li.menu-item-has-children:before,
 	.colors-custom .main-navigation ul li.page_item_has_children:before {
-		border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 73% ); /* base: #bbb; */
+		border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 73%); /* base: #bbb; */
 	}
 
 	.colors-custom .main-navigation ul li.menu-item-has-children:after,
 	.colors-custom .main-navigation ul li.page_item_has_children:after {
-		border-bottom-color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+		border-bottom-color: hsl(' . $hue . ', ' . $saturation . ', 100%); /* base: #fff; */
 	}
 
 	.colors-custom .main-navigation li li.focus > a,
@@ -556,19 +539,9 @@ body.colors-custom,
 	.colors-custom .main-navigation li li.current-menu-item a:hover,
 	.colors-custom .main-navigation li li.current_page_item a:focus,
 	.colors-custom .main-navigation li li.current-menu-item a:focus {
-		color: hsl( ' . $hue . ', ' . $saturation . ', 100% ); /* base: #fff; */
+		color: hsl(' . $hue . ', ' . $saturation . ', 100%); /* base: #fff; */
 	}
 }';
 
-
-	/**
-	 * Filters Twenty Seventeen custom colors CSS.
-	 *
-	 * @since Twenty Seventeen 1.0
-	 *
-	 * @param $css        string Base theme colors CSS.
-	 * @param $hue        int    The user's selected color hue.
-	 * @param $saturation string Filtered theme color saturation level.
-	 */
-	return apply_filters( 'twentyseventeen_custom_colors_css', $css, $hue, $saturation );
+	return apply_filters('pleiades17_custom_colors_css', $css, $hue, $saturation);
 }

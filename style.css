@@ -630,8 +630,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 /* line 102, sass/b-layout/_header.scss */
-.has-header-image.twentyseventeen-front-page .custom-header,
-.has-header-video.twentyseventeen-front-page .custom-header,
+.has-header-image.pleiades17-front-page .custom-header,
+.has-header-video.pleiades17-front-page .custom-header,
 .has-header-image.home.blog .custom-header,
 .has-header-video.home.blog .custom-header {
   display: table;
@@ -726,7 +726,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 }
 
 /* line 183, sass/b-layout/_header.scss */
-.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+.has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media img {
   bottom: 0;
   position: absolute;
   top: auto;
@@ -742,10 +742,9 @@ body:not(.title-tagline-hidden) .site-branding-text {
   .has-header-image .custom-header-media img,
   .has-header-video .custom-header-media video,
   .has-header-video .custom-header-media iframe,
-  .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+  .has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media img {
     height: 100%;
     left: 0;
-    -o-object-fit: cover;
     object-fit: cover;
     top: 0;
     -ms-transform: none;
@@ -762,8 +761,8 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 /* line 218, sass/b-layout/_header.scss */
-.has-header-image.twentyseventeen-front-page .site-branding,
-.has-header-video.twentyseventeen-front-page .site-branding,
+.has-header-image.pleiades17-front-page .site-branding,
+.has-header-video.pleiades17-front-page .site-branding,
 .has-header-image.home.blog .site-branding,
 .has-header-video.home.blog .site-branding {
   display: table-cell;
@@ -772,17 +771,18 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 /* line 1, sass/b-layout/_front-page.scss */
-.twentyseventeen-front-page .site-content {
+.pleiades17-front-page .site-content {
+  border: 3px dashed darkmagenta;
   padding: 0;
 }
 
-/* line 5, sass/b-layout/_front-page.scss */
-.twentyseventeen-panel {
+/* line 6, sass/b-layout/_front-page.scss */
+.pleiades17-panel {
   overflow: hidden;
   position: relative;
 }
 
-/* line 10, sass/b-layout/_front-page.scss */
+/* line 11, sass/b-layout/_front-page.scss */
 .panel-image {
   background-position: center center;
   background-repeat: no-repeat;
@@ -791,7 +791,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
   position: relative;
 }
 
-/* line 18, sass/b-layout/_front-page.scss */
+/* line 19, sass/b-layout/_front-page.scss */
 .panel-image:before {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+100 */
   /* FF3.6-15 */
@@ -811,49 +811,49 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
   top: 100px;
 }
 
-/* line 33, sass/b-layout/_front-page.scss */
-.twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child) {
+/* line 34, sass/b-layout/_front-page.scss */
+.pleiades17-front-page article:not(.has-post-thumbnail):not(:first-child) {
   border-top: 1px solid #ddd;
 }
 
-/* line 37, sass/b-layout/_front-page.scss */
+/* line 38, sass/b-layout/_front-page.scss */
 .panel-content {
   position: relative;
 }
 
-/* line 41, sass/b-layout/_front-page.scss */
+/* line 42, sass/b-layout/_front-page.scss */
 .panel-content .wrap {
   padding-bottom: 0.5em;
   padding-top: 1.75em;
 }
 
 /* Panel edit link */
-/* line 48, sass/b-layout/_front-page.scss */
-.twentyseventeen-panel .edit-link {
+/* line 49, sass/b-layout/_front-page.scss */
+.pleiades17-panel .edit-link {
   display: block;
   margin: 0.3em 0 0;
 }
 
-/* line 53, sass/b-layout/_front-page.scss */
-.twentyseventeen-panel .entry-header .edit-link {
+/* line 54, sass/b-layout/_front-page.scss */
+.pleiades17-panel .entry-header .edit-link {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
 /* Front Page - Recent Posts */
-/* line 60, sass/b-layout/_front-page.scss */
-.twentyseventeen-front-page .panel-content .recent-posts article {
+/* line 61, sass/b-layout/_front-page.scss */
+.pleiades17-front-page .panel-content .recent-posts article {
   border: 0;
   color: #333;
   margin-bottom: 3em;
 }
 
-/* line 66, sass/b-layout/_front-page.scss */
+/* line 67, sass/b-layout/_front-page.scss */
 .recent-posts .entry-header {
   margin-bottom: 1.2em;
 }
 
-/* line 70, sass/b-layout/_front-page.scss */
+/* line 71, sass/b-layout/_front-page.scss */
 .page .panel-content .recent-posts .entry-title {
   font-size: 20px;
   font-size: 1.25rem;
@@ -862,8 +862,8 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
   text-transform: none;
 }
 
-/* line 78, sass/b-layout/_front-page.scss */
-.twentyseventeen-panel .recent-posts .entry-header .edit-link {
+/* line 79, sass/b-layout/_front-page.scss */
+.pleiades17-panel .recent-posts .entry-header .edit-link {
   color: #222;
   display: inline-block;
   font-size: 11px;
@@ -946,7 +946,7 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 /* line 20, sass/b-layout/_posts.scss */
 .page .panel-content .entry-title,
 .page-title,
-body.page:not(.twentyseventeen-front-page) .entry-title {
+body.page:not(.pleiades17-front-page) .entry-title {
   color: #222;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1102,20 +1102,20 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 }
 
 /* line 159, sass/b-layout/_posts.scss */
-body:not(.twentyseventeen-front-page) .entry-header {
+body:not(.pleiades17-front-page) .entry-header {
   padding: 1em 0;
 }
 
 /* line 163, sass/b-layout/_posts.scss */
-body:not(.twentyseventeen-front-page) .entry-header,
-body:not(.twentyseventeen-front-page) .entry-content,
-body:not(.twentyseventeen-front-page) #comments {
+body:not(.pleiades17-front-page) .entry-header,
+body:not(.pleiades17-front-page) .entry-content,
+body:not(.pleiades17-front-page) #comments {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* line 170, sass/b-layout/_posts.scss */
-body:not(.twentyseventeen-front-page) .entry-header {
+body:not(.pleiades17-front-page) .entry-header {
   padding-top: 0;
 }
 
@@ -1153,7 +1153,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /* Single Post */
 /* line 204, sass/b-layout/_posts.scss */
 .single-post:not(.has-sidebar) #primary,
-.page.page-one-column:not(.twentyseventeen-front-page) #primary,
+.page.page-one-column:not(.pleiades17-front-page) #primary,
 .archive.page-one-column:not(.has-sidebar) .page-header,
 .archive.page-one-column:not(.has-sidebar) #primary {
   margin-left: auto;
@@ -3144,8 +3144,8 @@ h2.widget-title {
   }
 
   /* line 186, sass/f-media-queries/_media-queries.scss */
-  .has-header-image.twentyseventeen-front-page .site-branding,
-  .has-header-video.twentyseventeen-front-page .site-branding,
+  .has-header-image.pleiades17-front-page .site-branding,
+  .has-header-video.pleiades17-front-page .site-branding,
   .has-header-image.home.blog .site-branding,
   .has-header-video.home.blog .site-branding {
     bottom: 0;
@@ -3158,8 +3158,8 @@ h2.widget-title {
   }
 
   /* line 199, sass/f-media-queries/_media-queries.scss */
-  .has-header-image.twentyseventeen-front-page .custom-header,
-  .has-header-video.twentyseventeen-front-page .custom-header,
+  .has-header-image.pleiades17-front-page .custom-header,
+  .has-header-video.pleiades17-front-page .custom-header,
   .has-header-image.home.blog .custom-header,
   .has-header-video.home.blog .custom-header {
     display: block;
@@ -3173,8 +3173,8 @@ h2.widget-title {
   }
 
   /* line 212, sass/f-media-queries/_media-queries.scss */
-  .twentyseventeen-front-page.has-header-image .custom-header-media,
-  .twentyseventeen-front-page.has-header-video .custom-header-media,
+  .pleiades17-front-page.has-header-image .custom-header-media,
+  .pleiades17-front-page.has-header-video .custom-header-media,
   .home.blog.has-header-image .custom-header-media,
   .home.blog.has-header-video .custom-header-media {
     height: 0;
@@ -3182,8 +3182,8 @@ h2.widget-title {
   }
 
   /* line 220, sass/f-media-queries/_media-queries.scss */
-  .has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media,
-  .has-header-video:not(.twentyseventeen-front-page):not(.home) .custom-header-media {
+  .has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media,
+  .has-header-video:not(.pleiades17-front-page):not(.home) .custom-header-media {
     bottom: 0;
     height: auto;
     left: 0;
@@ -3506,16 +3506,16 @@ h2.widget-title {
 
   /* Front Page */
   /* line 502, sass/f-media-queries/_media-queries.scss */
-  .twentyseventeen-front-page.has-header-image .site-branding,
-  .twentyseventeen-front-page.has-header-video .site-branding,
+  .pleiades17-front-page.has-header-image .site-branding,
+  .pleiades17-front-page.has-header-video .site-branding,
   .home.blog.has-header-image .site-branding,
   .home.blog.has-header-video .site-branding {
     margin-bottom: 70px;
   }
 
   /* line 509, sass/f-media-queries/_media-queries.scss */
-  .twentyseventeen-front-page.has-header-image .custom-header-media,
-  .twentyseventeen-front-page.has-header-video .custom-header-media,
+  .pleiades17-front-page.has-header-image .custom-header-media,
+  .pleiades17-front-page.has-header-video .custom-header-media,
   .home.blog.has-header-image .custom-header-media,
   .home.blog.has-header-video .custom-header-media {
     height: 1200px;
@@ -3525,16 +3525,16 @@ h2.widget-title {
   }
 
   /* line 519, sass/f-media-queries/_media-queries.scss */
-  .twentyseventeen-front-page.has-header-image .custom-header-media:before,
-  .twentyseventeen-front-page.has-header-video .custom-header-media:before,
+  .pleiades17-front-page.has-header-image .custom-header-media:before,
+  .pleiades17-front-page.has-header-video .custom-header-media:before,
   .home.blog.has-header-image .custom-header-media:before,
   .home.blog.has-header-video .custom-header-media:before {
     height: 33%;
   }
 
   /* line 526, sass/f-media-queries/_media-queries.scss */
-  .admin-bar.twentyseventeen-front-page.has-header-image .custom-header-media,
-  .admin-bar.twentyseventeen-front-page.has-header-video .custom-header-media,
+  .admin-bar.pleiades17-front-page.has-header-image .custom-header-media,
+  .admin-bar.pleiades17-front-page.has-header-video .custom-header-media,
   .admin-bar.home.blog.has-header-image .custom-header-media,
   .admin-bar.home.blog.has-header-video .custom-header-media {
     height: calc(100vh - 32px);
@@ -3754,7 +3754,7 @@ h2.widget-title {
   /* blog and archive */
   /* line 721, sass/f-media-queries/_media-queries.scss */
   .blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-  .twentyseventeen-front-page.page-two-column .entry-content blockquote.alignleft,
+  .pleiades17-front-page.page-two-column .entry-content blockquote.alignleft,
   .archive:not(.has-sidebar) .entry-content blockquote.alignleft,
   .page-two-column .entry-content blockquote.alignleft {
     margin-left: -72.5%;
@@ -3763,7 +3763,7 @@ h2.widget-title {
 
   /* line 729, sass/f-media-queries/_media-queries.scss */
   .blog:not(.has-sidebar) .entry-content blockquote.alignright,
-  .twentyseventeen-front-page.page-two-column .entry-content blockquote.alignright,
+  .pleiades17-front-page.page-two-column .entry-content blockquote.alignright,
   .archive:not(.has-sidebar) .entry-content blockquote.alignright,
   .page-two-column .entry-content blockquote.alignright {
     margin-right: 0;
@@ -3779,7 +3779,7 @@ h2.widget-title {
   /* Pages */
   /* line 745, sass/f-media-queries/_media-queries.scss */
   .page.page-one-column .entry-header,
-  .twentyseventeen-front-page.page-one-column .entry-header,
+  .pleiades17-front-page.page-one-column .entry-header,
   .archive.page-one-column:not(.has-sidebar) .page-header {
     margin-bottom: 4em;
   }
@@ -3987,7 +3987,7 @@ h2.widget-title {
   .blog:not(.has-sidebar) .entry-content blockquote.alignright,
   .archive:not(.has-sidebar) .entry-content blockquote.alignright,
   .page-two-column .entry-content blockquote.alignright,
-  .twentyseventeen-front-page .entry-content blockquote.alignright {
+  .pleiades17-front-page .entry-content blockquote.alignright {
     margin-right: -20%;
   }
 }
@@ -4002,7 +4002,7 @@ h2.widget-title {
 7. Theme Fallbacks
 --------------------------------------------------------------*/
 /* line 1, sass/g-theme-fallbacks/_customizer.scss */
-.highlight-front-sections.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:after {
+.highlight-front-sections.pleiades17-customizer.pleiades17-front-page .pleiades17-panel:after {
   border: 2px dashed #0085ba;
   /* Matches visible edit shortcuts. */
   bottom: 1em;
@@ -4016,14 +4016,14 @@ h2.widget-title {
 }
 
 /* line 13, sass/g-theme-fallbacks/_customizer.scss */
-.highlight-front-sections.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .panel-content {
+.highlight-front-sections.pleiades17-customizer.pleiades17-front-page .pleiades17-panel .panel-content {
   z-index: 2;
   /* Prevent :after from preventing interactions within the section */
 }
 
 /* Used for placeholder text */
 /* line 18, sass/g-theme-fallbacks/_customizer.scss */
-.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel .twentyseventeen-panel-title {
+.pleiades17-customizer.pleiades17-front-page .pleiades17-panel .pleiades17-panel-title {
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -4036,25 +4036,25 @@ h2.widget-title {
 
 /* Show borders on the custom page panels only when the front page sections are being edited */
 /* line 30, sass/g-theme-fallbacks/_customizer.scss */
-.highlight-front-sections.twentyseventeen-customizer.twentyseventeen-front-page .twentyseventeen-panel:nth-of-type(1):after {
+.highlight-front-sections.pleiades17-customizer.pleiades17-front-page .pleiades17-panel:nth-of-type(1):after {
   border: none;
 }
 
 /* line 34, sass/g-theme-fallbacks/_customizer.scss */
-.twentyseventeen-front-page.twentyseventeen-customizer #primary article.panel-placeholder {
+.pleiades17-front-page.pleiades17-customizer #primary article.panel-placeholder {
   border: 0;
 }
 
 /* Add some space around the visual edit shortcut buttons. */
 /* line 39, sass/g-theme-fallbacks/_customizer.scss */
-.twentyseventeen-panel .customize-partial-edit-shortcut button {
+.pleiades17-panel .customize-partial-edit-shortcut button {
   top: 30px;
   left: 30px;
 }
 
 /* Ensure that placeholder icons are visible. */
 /* line 45, sass/g-theme-fallbacks/_customizer.scss */
-.twentyseventeen-panel .customize-partial-edit-shortcut-hidden:before {
+.pleiades17-panel .customize-partial-edit-shortcut-hidden:before {
   visibility: visible;
 }
 
@@ -4205,7 +4205,7 @@ h2.widget-title {
   /* line 69, sass/g-theme-fallbacks/_print.scss */
   .page .panel-content .entry-title,
   .page-title,
-  body.page:not(.twentyseventeen-front-page) .entry-title {
+  body.page:not(.pleiades17-front-page) .entry-title {
     font-size: 10pt;
   }
 
@@ -4230,8 +4230,8 @@ h2.widget-title {
   }
 
   /* line 94, sass/g-theme-fallbacks/_print.scss */
-  .twentyseventeen-front-page.has-header-image .site-branding,
-  .twentyseventeen-front-page.has-header-video .site-branding,
+  .pleiades17-front-page.has-header-image .site-branding,
+  .pleiades17-front-page.has-header-video .site-branding,
   .home.blog.has-header-image .site-branding,
   .home.blog.has-header-video .site-branding {
     position: relative;
@@ -4278,10 +4278,10 @@ h2.widget-title {
   body,
   a,
   .site-title a,
-  .twentyseventeen-front-page.has-header-image .site-title,
-  .twentyseventeen-front-page.has-header-video .site-title,
-  .twentyseventeen-front-page.has-header-image .site-title a,
-  .twentyseventeen-front-page.has-header-video .site-title a {
+  .pleiades17-front-page.has-header-image .site-title,
+  .pleiades17-front-page.has-header-video .site-title,
+  .pleiades17-front-page.has-header-image .site-title a,
+  .pleiades17-front-page.has-header-video .site-title a {
     color: #222 !important;
     /* Make sure color schemes don't affect to print */
   }
@@ -4291,8 +4291,8 @@ h2.widget-title {
   h5,
   blockquote,
   .site-description,
-  .twentyseventeen-front-page.has-header-image .site-description,
-  .twentyseventeen-front-page.has-header-video .site-description,
+  .pleiades17-front-page.has-header-image .site-description,
+  .pleiades17-front-page.has-header-video .site-description,
   .entry-meta,
   .entry-meta a {
     color: #777 !important;

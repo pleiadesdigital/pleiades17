@@ -1,6 +1,5 @@
-/**
-* @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
-*/
+// HTML5 Shiv 3.7.3
+
 ;(function(window, document) {
 /*jshint evil:true */
   /** version */
@@ -57,13 +56,8 @@
 
   /*--------------------------------------------------------------------------*/
 
-  /**
-   * Creates a style sheet with the given CSS text and adds it to the document.
-   * @private
-   * @param {Document} ownerDocument The document.
-   * @param {String} cssText The CSS text.
-   * @returns {StyleSheet} The style element.
-   */
+  /* Creates a style sheet with the given CSS text and adds it to the document */
+
   function addStyleSheet(ownerDocument, cssText) {
     var p = ownerDocument.createElement('p'),
         parent = ownerDocument.getElementsByTagName('head')[0] || ownerDocument.documentElement;
@@ -72,22 +66,13 @@
     return parent.insertBefore(p.lastChild, parent.firstChild);
   }
 
-  /**
-   * Returns the value of `html5.elements` as an array.
-   * @private
-   * @returns {Array} An array of shived element node names.
-   */
+  /* Returns the value of `html5.elements` as an array */
   function getElements() {
     var elements = html5.elements;
     return typeof elements == 'string' ? elements.split(' ') : elements;
   }
 
-  /**
-   * Extends the built-in list of html5 elements
-   * @memberOf html5
-   * @param {String|Array} newElements whitespace separated list or array of new element names to shiv
-   * @param {Document} ownerDocument The context document.
-   */
+  /* Extends the built-in list of html5 elements */
   function addElements(newElements, ownerDocument) {
     var elements = html5.elements;
     if(typeof elements != 'string'){
@@ -100,12 +85,7 @@
     shivDocument(ownerDocument);
   }
 
-   /**
-   * Returns the data associated to the given document
-   * @private
-   * @param {Document} ownerDocument The document.
-   * @returns {Object} An object of data.
-   */
+  /* Returns the data associated to the given document */
   function getExpandoData(ownerDocument) {
     var data = expandoData[ownerDocument[expando]];
     if (!data) {
@@ -117,13 +97,7 @@
     return data;
   }
 
-  /**
-   * returns a shived element for the given nodeName and document
-   * @memberOf html5
-   * @param {String} nodeName name of the element
-   * @param {Document|DocumentFragment} ownerDocument The context document.
-   * @returns {Object} The shived element.
-   */
+  /* Returns a shived element for the given nodeName and document */
   function createElement(nodeName, ownerDocument, data){
     if (!ownerDocument) {
         ownerDocument = document;
@@ -154,12 +128,7 @@
     return node.canHaveChildren && !reSkip.test(nodeName) && !node.tagUrn ? data.frag.appendChild(node) : node;
   }
 
-  /**
-   * returns a shived DocumentFragment for the given document
-   * @memberOf html5
-   * @param {Document} ownerDocument The context document.
-   * @returns {Object} The shived DocumentFragment.
-   */
+  /* Returns a shived DocumentFragment for the given document */
   function createDocumentFragment(ownerDocument, data){
     if (!ownerDocument) {
         ownerDocument = document;
@@ -178,12 +147,7 @@
     return clone;
   }
 
-  /**
-   * Shivs the `createElement` and `createDocumentFragment` methods of the document.
-   * @private
-   * @param {Document|DocumentFragment} ownerDocument The document.
-   * @param {Object} data of the document.
-   */
+  /* Shivs the `createElement` and `createDocumentFragment` methods of the document */
   function shivMethods(ownerDocument, data) {
     if (!data.cache) {
         data.cache = {};
@@ -191,7 +155,6 @@
         data.createFrag = ownerDocument.createDocumentFragment;
         data.frag = data.createFrag();
     }
-
 
     ownerDocument.createElement = function(nodeName) {
       //abort shiv
@@ -216,12 +179,7 @@
 
   /*--------------------------------------------------------------------------*/
 
-  /**
-   * Shivs the given document.
-   * @memberOf html5
-   * @param {Document} ownerDocument The document to shiv.
-   * @returns {Document} The shived document.
-   */
+  /* Shivs the given document */
   function shivDocument(ownerDocument) {
     if (!ownerDocument) {
         ownerDocument = document;
@@ -246,67 +204,27 @@
 
   /*--------------------------------------------------------------------------*/
 
-  /**
-   * The `html5` object is exposed so that more elements can be shived and
-   * existing shiving can be detected on iframes.
-   * @type Object
-   * @example
-   *
-   * // options can be changed before the script is included
-   * html5 = { 'elements': 'mark section', 'shivCSS': false, 'shivMethods': false };
-   */
+  /* The `html5` object is exposed so that more elements can be shived and
+   * existing shiving can be detected on iframes */
   var html5 = {
-
-    /**
-     * An array or space separated string of node names of the elements to shiv.
-     * @memberOf html5
-     * @type Array|String
-     */
+    // An array or space separated string of node names of the elements to shiv
     'elements': options.elements || 'abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video',
-
-    /**
-     * current version of html5shiv
-     */
+    //current version of html5shiv
     'version': version,
-
-    /**
-     * A flag to indicate that the HTML5 style sheet should be inserted.
-     * @memberOf html5
-     * @type Boolean
-     */
+    // A flag to indicate that the HTML5 style sheet should be inserted.
     'shivCSS': (options.shivCSS !== false),
-
-    /**
-     * Is equal to true if a browser supports creating unknown/HTML5 elements
-     * @memberOf html5
-     * @type boolean
-     */
+    // Is equal to true if a browser supports creating unknown/HTML5 elements
     'supportsUnknownElements': supportsUnknownElements,
-
-    /**
-     * A flag to indicate that the document's `createElement` and `createDocumentFragment`
-     * methods should be overwritten.
-     * @memberOf html5
-     * @type Boolean
-     */
+    // A flag to indicate that the document's `createElement` and `createDocumentFragment`
     'shivMethods': (options.shivMethods !== false),
-
-    /**
-     * A string to describe the type of `html5` object ("default" or "default print").
-     * @memberOf html5
-     * @type String
-     */
+    // A string to describe the type of `html5` object ("default" or "default print")
     'type': 'default',
-
     // shivs the document according to the specified `html5` object options
     'shivDocument': shivDocument,
-
     //creates a shived element
     createElement: createElement,
-
     //creates a shived documentFragment
     createDocumentFragment: createDocumentFragment,
-
     //extends list of elements
     addElements: addElements
   };
@@ -315,7 +233,6 @@
 
   // expose html5
   window.html5 = html5;
-
   // shiv the document
   shivDocument(document);
 
@@ -324,3 +241,5 @@
   }
 
 }(typeof window !== "undefined" ? window : this, document));
+
+

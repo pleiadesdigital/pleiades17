@@ -19,7 +19,7 @@
 
 .page .panel-content .entry-title,
 .page-title,
-body.page:not(.twentyseventeen-front-page) .entry-title {
+body.page:not(.pleiades17-front-page) .entry-title {
 	color: #222;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -156,18 +156,18 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 	padding-bottom: 2em;
 }
 
-body:not(.twentyseventeen-front-page) .entry-header {
+body:not(.pleiades17-front-page) .entry-header {
 	padding: 1em 0;
 }
 
-body:not(.twentyseventeen-front-page) .entry-header,
-body:not(.twentyseventeen-front-page) .entry-content,
-body:not(.twentyseventeen-front-page) #comments {
+body:not(.pleiades17-front-page) .entry-header,
+body:not(.pleiades17-front-page) .entry-content,
+body:not(.pleiades17-front-page) #comments {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-body:not(.twentyseventeen-front-page) .entry-header {
+body:not(.pleiades17-front-page) .entry-header {
 	padding-top: 0;
 }
 
@@ -202,7 +202,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 /* Single Post */
 
 .single-post:not(.has-sidebar) #primary,
-.page.page-one-column:not(.twentyseventeen-front-page) #primary,
+.page.page-one-column:not(.pleiades17-front-page) #primary,
 .archive.page-one-column:not(.has-sidebar) .page-header,
 .archive.page-one-column:not(.has-sidebar) #primary {
 	margin-left: auto;

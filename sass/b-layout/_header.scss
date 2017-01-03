@@ -99,8 +99,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	position: relative;
 }
 
-.has-header-image.twentyseventeen-front-page .custom-header,
-.has-header-video.twentyseventeen-front-page .custom-header,
+.has-header-image.pleiades17-front-page .custom-header,
+.has-header-video.pleiades17-front-page .custom-header,
 .has-header-image.home.blog .custom-header,
 .has-header-video.home.blog .custom-header {
 	display: table;
@@ -180,7 +180,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	top: 62px;
 }
 
-.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+.has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media img {
 	bottom: 0;
 	position: absolute;
 	top: auto;
@@ -195,10 +195,10 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	.has-header-image .custom-header-media img,
 	.has-header-video .custom-header-media video,
 	.has-header-video .custom-header-media iframe,
-	.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
+	.has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media img {
 		height: 100%;
 		left: 0;
-		-o-object-fit: cover;
+		// -o-object-fit: cover;
 		object-fit: cover;
 		top: 0;
 		-ms-transform: none;
@@ -215,8 +215,8 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	display: none;
 }
 
-.has-header-image.twentyseventeen-front-page .site-branding,
-.has-header-video.twentyseventeen-front-page .site-branding,
+.has-header-image.pleiades17-front-page .site-branding,
+.has-header-video.pleiades17-front-page .site-branding,
 .has-header-image.home.blog .site-branding,
 .has-header-video.home.blog .site-branding {
 	display: table-cell;

@@ -1,7 +1,7 @@
 {
   "name": "pleiades-reverse",
   "version": "1.0.0",
-  "description": "Reverse Engineering twentyseventeen",
+  "description": "Reverse Engineering to pleaides17",
   "main": "index.php",
   "repository": {
     "type": "git",
