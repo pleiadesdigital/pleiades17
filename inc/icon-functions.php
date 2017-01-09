@@ -43,13 +43,13 @@ function pleiades17_get_svg($args = array()) {
 		}
 	}
 	// Begin SVG markup.
-	$svg = '<svg class="icon icon-' . esc_attr( $args['icon']) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
+	$svg = '<svg class="icon icon-' . esc_attr($args['icon']) . '"' . $aria_hidden . $aria_labelledby . ' role="img">';
 	// Display the title.
 	if ($args['title']) {
 		$svg .= '<title id="title-' . $unique_id . '">' . esc_html($args['title']) . '</title>';
 		// Display the desc only if the title is already set
 		if ($args['desc']) {
-			$svg .= '<desc id="desc-' . $unique_id . '">' . esc_html( $args['desc'] ) . '</desc>';
+			$svg .= '<desc id="desc-' . $unique_id . '">' . esc_html($args['desc']) . '</desc>';
 		}
 	}
 	//Display the icon. See https://core.trac.wordpress.org/ticket/38387

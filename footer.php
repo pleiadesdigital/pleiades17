@@ -15,7 +15,7 @@
 								'menu_class'     => 'social-links-menu',
 								'depth'          => 1,
 								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>' . pleiades17_get_svg( array('icon' => 'chain')),
+								'link_after'     => '</span>' . pleiades17_get_svg(array('icon' => 'chain')),
 							) );
 						?>
 					</nav><!-- .social-navigation -->

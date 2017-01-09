@@ -3,61 +3,58 @@
 }
 
 .site-header {
-	background-color: #fafafa;
+	background-color: rgba(MediumOrchid, 0.6);
 	position: relative;
-}
-
-/* Site branding */
-
-.site-branding {
-	padding: 1em 0;
-	position: relative;
-	-webkit-transition: margin-bottom 0.2s;
-	transition: margin-bottom 0.2s;
-	z-index: 3;
-}
-
-.site-branding a {
-	text-decoration: none;
-	-webkit-transition: opacity 0.2s;
-	transition: opacity 0.2s;
-}
-
-.site-branding a:hover,
-.site-branding a:focus {
-	opacity: 0.7;
-}
-
-.site-title {
-	clear: none;
-	font-size: 24px;
-	font-size: 1.5rem;
-	font-weight: 800;
-	line-height: 1.25;
-	letter-spacing: 0.08em;
-	margin: 0;
-	padding: 0;
-	text-transform: uppercase;
-}
-
-.site-title,
-.site-title a {
-	color: #222;
-	opacity: 1; /* Prevent opacity from changing during selective refreshes in the customize preview */
-}
+	.site-branding {
+		background-color: rgba(MediumOrchid, 0.4);
+		.wrap {
+			// SITE BRANDING
+			.site-branding-text {
+				padding: 1em 0px;
+				position: relative;
+				-webkit-transition: margin-bottom 0.2s;
+				transition: margin-bottom 0.2s;
+				z-index: 3;
+				.site-title {
+					clear: none;
+					font-family: $title;
+					font-size: 24px;
+					font-size: 1.5rem;
+					font-weight: 800;
+					line-height: 1.25;
+					letter-spacing: 0.08em;
+					margin: 0;
+					padding: 0;
+					text-transform: uppercase;
+					color: #222;
+					a {
+						text-decoration: none;
+						-webkit-transition: opacity 0.2s;
+						transition: opacity 0.2s;
+						color: #222;
+						&:hover,
+						&:focus {
+							opacity: 0.5;
+						} //&:hover, &:focus
+					} //a
+				} //.site-title
+				.site-description {
+					color: #666666;
+					font-family: $title;
+					font-size: 15px;
+					font-size: 0.9375rem;
+					margin-bottom: 0px;
+				} //.site-description
+			} //.site-branding-text
+		} //.wrap
+	} //.site-branding	
+} //.site-header
 
 body.has-header-image .site-title,
 body.has-header-video .site-title,
 body.has-header-image .site-title a,
 body.has-header-video .site-title a {
 	color: #fff;
-}
-
-.site-description {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	margin-bottom: 0;
 }
 
 body.has-header-image .site-description,
@@ -198,7 +195,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	.has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media img {
 		height: 100%;
 		left: 0;
-		// -o-object-fit: cover;
+		-o-object-fit: cover;
 		object-fit: cover;
 		top: 0;
 		-ms-transform: none;

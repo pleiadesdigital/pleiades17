@@ -8,15 +8,6 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: pleiades17
-Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Pleiades 2017 is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -60,10 +51,8 @@ H. Variables
 	h.1 Colors
 	h.2 Fonts
 	h.3 Structure
-h.4 Mixins
+	h.4 Mixins
 --------------------------------------------------------------*/
-
-
 
 /*--------------------------------------------------------------
 0. Compass Imports & External
@@ -83,6 +72,13 @@ h.4 Mixins
 
 @import "susy";
 @import "breakpoint";
+
+
+// H. Variables
+@import "h-variables/colors";
+@import "h-variables/structure";
+@import "h-variables/fonts";
+@import "h-variables/mixins";
 
 /*--------------------------------------------------------------
 A. Normalize
@@ -115,29 +111,23 @@ D. Navigation
 --------------------------------------------------------------*/
 @import "d-navigation/main-navigation";
 /*--------------------------------------------------------------
-5. Misc Markup
+E. Misc Markup
 --------------------------------------------------------------*/
 @import "e-misc-markup/comments";
 @import "e-misc-markup/media";
 @import "e-misc-markup/widgets";
 /*--------------------------------------------------------------
-6. Media Queries
+F. Media Queries
 --------------------------------------------------------------*/
 @import "f-media-queries/media-queries";
 /*--------------------------------------------------------------
-7. Theme Fallbacks
+G. Theme Fallbacks
 --------------------------------------------------------------*/
 @import "g-theme-fallbacks/customizer";
 @import "g-theme-fallbacks/svg-fallbacks";
 @import "g-theme-fallbacks/print";
 @import "g-theme-fallbacks/featured-image-hover";
-/*--------------------------------------------------------------
-8. Variables
---------------------------------------------------------------*/
-@import "h-variables/colors";
-@import "h-variables/structure";
-@import "h-variables/fonts";
-@import "h-variables/mixins";
+
 
 
 

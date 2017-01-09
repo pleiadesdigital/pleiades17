@@ -1,5 +1,12 @@
 <?php //Pleiades17 Premium Theme functions and definitions
 
+// WordPress version checkdate
+if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
+	require get_template_directory() . '/inc/back-compat.php';
+	return;
+}
+
+// SET UP THEME DEFAULTS
 function pleiades17_setup() {
 	
 	// Make theme available for translation
@@ -48,7 +55,7 @@ function pleiades17_setup() {
 		'flex-width'  => true,
 	));
 
-	// Selective Refresh for widgets VERIFY
+	// Selective Refresh for widgets VERIFY!!
 	add_theme_support('customize-selective-refresh-widgets');
 
 	// Visual Editor Styles
@@ -140,6 +147,7 @@ function pleiades17_content_width() {
 	if (pleiades17_is_frontpage()) {
 		$content_width = 1120;
 	}
+	// filter content width
 	$GLOBALS['content_width'] = apply_filters('pleiades17_content_width', $content_width);
 }
 add_action('after_setup_theme', 'pleiades17_content_width', 0);
@@ -274,7 +282,7 @@ function pleiades17_content_image_sizes_attr($sizes, $size) {
 }
 add_filter('wp_calculate_image_sizes', 'pleiades17_content_image_sizes_attr', 10, 2);
 
-// Filter the `sizes` value in the header image markup
+// Filter the 'sizes' value in the header image markup
 function pleiades17_header_image_tag($html, $header, $attr) {
 	if (isset($attr['sizes'])) {
 		$html = str_replace($attr['sizes'], '100vw', $html);

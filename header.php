@@ -30,11 +30,11 @@
 			</header><!-- #masthead -->
 
 			<?php
-			/*if (has_post_thumbnail() && (is_single() || (is_page() &&!pleiades17_is_frontpage()))) :
+			if (has_post_thumbnail() && (is_single() || (is_page() &&!pleiades17_is_frontpage()))) :
 				echo '<div class="single-featured-image-header">';
 				the_post_thumbnail('pleiades17-featured-image');
 				echo '</div><!-- .single-featured-image-header -->';
-			endif;*/
+			endif;
 			?>
 
 			<div class="site-content-contain">

@@ -26,7 +26,8 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php if ('' !== get_the_post_thumbnail() && ! is_single()) : ?>
+	<!-- POST THUMBNAIL -->
+	<?php if ('' !== get_the_post_thumbnail() && !is_single()) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
 				<?php the_post_thumbnail('pleiades17-featured-image'); ?>
@@ -34,12 +35,17 @@
 		</div><!-- .post-thumbnail -->
 	<?php endif; ?>
 
+	<!-- CONTENT -->
 	<div class="entry-content">
 		<?php
-			the_content(sprintf(
-				__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'pleiades17'),
-				get_the_title()
-			) );
+			if (is_single()) {
+				the_content(sprintf(
+					__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'pleiades17'),
+					get_the_title()
+				));
+			} else {
+				the_excerpt();
+			}	
 			wp_link_pages(array(
 				'before'      => '<div class="page-links">' . __('Pages:', 'pleiades17'),
 				'after'       => '</div>',

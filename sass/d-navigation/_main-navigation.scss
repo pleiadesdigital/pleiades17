@@ -1,34 +1,29 @@
 .navigation-top {
-	background: #fff;
+	background: #FFFFFF;
 	border-bottom: 1px solid #eee;
 	border-top: 1px solid #eee;
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
 }
-
 .navigation-top .wrap {
 	max-width: 1000px;
 	padding: 0;
 }
-
 .navigation-top a {
 	color: #222;
 	font-weight: 600;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
-
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
 	color: #767676;
 }
-
 .main-navigation {
 	clear: both;
 	display: block;
 }
-
 .main-navigation ul {
 	background: #fff;
 	list-style: none;
