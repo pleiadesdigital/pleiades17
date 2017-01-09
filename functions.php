@@ -8,35 +8,30 @@ if (version_compare($GLOBALS['wp_version'], '4.7-alpha', '<')) {
 
 // SET UP THEME DEFAULTS
 function pleiades17_setup() {
-	
 	// Make theme available for translation
 	load_theme_textdomain('pleiades17');
-	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support('automatic-feed-links');
-	
 	//Let WordPress manage the document title.
 	add_theme_support('title-tag');
-	
 	// POST THUMBNAILS
 	add_theme_support('post-thumbnails');
 	add_image_size('pleiades17-featured-image', 2000, 1200, true);
+	add_image_size('news-blog-page', 600, 300, true);
 	add_image_size('pleiades17-thumbnail-avatar', 100, 100, true);
-	
 	// NAVIGATION
 	register_nav_menus(array(
 		'top'    => __('Top Menu', 'pleiades17'),
 		'social' => __('Social Links Menu', 'pleiades17'),
 	));
-	
 	// HTML5 support
 	add_theme_support('html5', array(
+		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',
 	));
-
 	// POST FORMATS
 	add_theme_support('post-formats', array(
 		'aside',
@@ -47,20 +42,17 @@ function pleiades17_setup() {
 		'gallery',
 		'audio',
 	));
-
 	// Custom Logo.
 	add_theme_support('custom-logo', array(
 		'width'       => 250,
 		'height'      => 250,
 		'flex-width'  => true,
 	));
-
 	// Selective Refresh for widgets VERIFY!!
 	add_theme_support('customize-selective-refresh-widgets');
-
 	// Visual Editor Styles
 	add_editor_style(array('assets/css/editor-style.css'));
-
+	// Starter Content
 	add_theme_support('starter-content', array(
 		'widgets' => array(
 			'sidebar-1' => array(
@@ -228,6 +220,18 @@ function pleiades17_scripts() {
 	// MAIN CSS style.css
 	wp_enqueue_style('pleiades17-style', get_stylesheet_uri());
 
+	// Fontawesome
+	wp_enqueue_script('pleiades17-fontawesome', 'https://use.fontawesome.com/b1403a6995.js', array(), '20170109', true);
+
+	// Google Fonts
+	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,400|Source+Sans+Pro:300,400,600');
+	// Google Maps
+	wp_enqueue_script('pleiades17-googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDjEcnBmAHgm_LfegO9o84NLPAfBLwVjSY', array(), '20161130', true);
+
+	// FlexSlider CSS & JS
+	wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/assets/css/flexslider.css');
+	wp_enqueue_script('flexslider-js', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js', array('jquery'), '', true);
+
 	// Internet Explorer 8 specific stylesheet
 	wp_enqueue_style('pleiades17-ie8', get_theme_file_uri('/assets/css/ie8.css'), array('pleiades17-style'), '1.0');
 	wp_style_add_data('pleiades17-ie8', 'conditional', 'lt IE 9');
@@ -247,9 +251,9 @@ function pleiades17_scripts() {
 	// NAVIGATION
 	if (has_nav_menu('top')) {
 		wp_enqueue_script('pleiades17-navigation', get_theme_file_uri('/assets/js/navigation.js'), array(), '1.0', true);
-		$pleiades17_l10n['expand']    = __('Expand child menu', 'pleiades17');
-		$pleiades17_l10n['collapse']  = __('Collapse child menu', 'pleiades17');
-		$pleiades17_l10n['icon']      = pleiades17_get_svg(array('icon' => 'angle-down', 'fallback' => true));
+		$pleiades17_l10n['expand'] = __('Expand child menu', 'pleiades17');
+		$pleiades17_l10n['collapse'] = __('Collapse child menu', 'pleiades17');
+		$pleiades17_l10n['icon'] = pleiades17_get_svg(array('icon' => 'angle-down', 'fallback' => true));
 	}
 
 	// GLOBAL ScreenReaderText
@@ -260,6 +264,9 @@ function pleiades17_scripts() {
 
 	// Skip Link Focus
 	wp_localize_script('pleiades17-skip-link-focus-fix', 'pleiades17ScreenReaderText', $pleiades17_l10n);
+
+	// Custom JavaScript
+	wp_enqueue_script('pleiades18-app', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), '20170109', true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -308,6 +315,12 @@ function pleiades17_front_page_template($template) {
 }
 add_filter('frontpage_template',  'pleiades17_front_page_template');
 
+// Add Excerpts to Pages
+function add_excerpts_to_pages() {
+	add_post_type_support('page', 'excerpt');
+}	
+add_action('init', 'add_excerpts_to_pages');
+
 // Implement the Custom Header feature
 require get_parent_theme_file_path('/inc/custom-header.php');
 
@@ -323,5 +336,46 @@ require get_parent_theme_file_path('/inc/customizer.php');
 // SVG icons functions and filters.
 require get_parent_theme_file_path('/inc/icon-functions.php');
 
+
+/*====================================================
+		pleiades17 Custom Post Types
+====================================================*/
+	function pleiades17_custom_post_types() {
+		// Servicios Post Type
+		$labels = array(
+			'name'                => 'Servicios',
+			'singular_name'       => 'Servicio',
+			'menu_name'           => 'Servicios',
+			'name_admin_bar'			=> 'Servicio',
+			'add_new'             => 'Add New',
+			'add_new_item'				=> 'Add New Servicio',
+			'new_item'            => 'New Servicio',
+			'edit_item'           => 'Edit Servicio',	
+			'view_item'           => 'View Servicio',
+			'all_items'						=> 'All Servicios',
+			'search_items'        => 'Search Servicios',
+			'parent_item_colon'   => 'Parent Servicios:',
+			'not_found'           => 'No Servicio Found.',
+			'not_found_in_trash'  => 'No Servicios Found In Trash.',
+		);
+		$args = array(
+			'labels'              => $labels,
+			'public'							=> true,
+			'publicly_queryable'  => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 20,	
+			'menu_icon'           => 'dashicons-id-alt',
+			'query_var'           => true,
+			'rewrite'             => array('slug' => 'servicios'),
+			'capability_type'     => 'post', //page
+			'has_archive'         => false, //false
+			'hierarchical'        => true, //true
+			'supports'            => array('title', 'editor', 'thumbnail','excerpt')
+		);
+		register_post_type('servicios', $args);
+
+	} //pleiades17_custom_post_types()
+	add_action('init', 'pleiades17_custom_post_types');
 
 

@@ -4,12 +4,11 @@
 		.content-area {
 			.site-main {
 				.panel-content {
-					background-color: rgba(green, 0.4);
+					background-color: rgba($black, 0.1); 
 					position: relative;
 					.wrap {
 						@include container();
-						border: 2px dashed yellow;
-						background-color: rgba(yellow, 0.3);
+						background-color: $white;
 						padding-bottom: 0.5em;
 						padding-top: 1.75em;
 					} //.wrap
@@ -46,8 +45,7 @@
 	border-top: 1px solid #ddd;
 }
 
-
-/* Front Page - Recent Posts */
+// FRONT PAGE - RECENT POSTS
 
 .pleiades17-front-page {
 	.panel-content {
