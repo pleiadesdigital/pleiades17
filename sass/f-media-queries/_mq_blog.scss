@@ -18,7 +18,7 @@
 @include breakpoint($laptop) {
 	// Posts
 	.site-content {
-		padding: 1em 0px 0px;
+		padding: 0px;
 	}
 	.single-post .entry-title,
 	.page .entry-title {

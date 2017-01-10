@@ -3,11 +3,9 @@
 .sticky {
 	position: relative;
 }
-
 .post:not(.sticky) .icon-thumb-tack {
 	display: none;
 }
-
 .sticky .icon-thumb-tack {
 	display: block;
 	height: 18px;
@@ -16,7 +14,6 @@
 	top: 1.65em;
 	width: 20px;
 }
-
 .page .panel-content .entry-title,
 .page-title,
 body.page:not(.pleiades17-front-page) .entry-title {
@@ -180,12 +177,10 @@ body:not(.pleiades17-front-page) .entry-header {
 	max-width: 740px;
 }
 .single-featured-image-header {
-	border: 4px dashed aqua;
 	background-color: #fafafa;
 	border-bottom: 1px solid #eee;
 }
 .single-featured-image-header img {
-	border: 3px solid yellow;
 	display: block;
 	margin: auto;
 }
