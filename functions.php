@@ -19,6 +19,10 @@ function pleiades17_setup() {
 	add_image_size('pleiades17-featured-image', 2000, 1200, true);
 	add_image_size('news-blog-page', 600, 300, true);
 	add_image_size('pleiades17-thumbnail-avatar', 100, 100, true);
+
+	// SET DEFAULT CONTENT WIDTH
+	$GLOBALS['content_width'] = 525;
+
 	// NAVIGATION
 	register_nav_menus(array(
 		'top'    => __('Top Menu', 'pleiades17'),
@@ -52,97 +56,29 @@ function pleiades17_setup() {
 	add_theme_support('customize-selective-refresh-widgets');
 	// Visual Editor Styles
 	add_editor_style(array('assets/css/editor-style.css'));
-	// Starter Content
-	add_theme_support('starter-content', array(
-		'widgets' => array(
-			'sidebar-1' => array(
-				'text_business_info',
-				'search',
-				'text_about',
-			),
-			'sidebar-2' => array(	
-				'text_business_info',
-			),
-			'sidebar-3' => array(
-				'text_about',
-				'search',
-			),
-		),
-		'posts' => array(
-			'home',
-			'about' => array(
-				'thumbnail' => '{{image-sandwich}}',
-			),
-			'contact' => array(
-				'thumbnail' => '{{image-espresso}}',
-			),
-			'blog' => array(
-				'thumbnail' => '{{image-coffee}}',
-			),
-			'homepage-section' => array(
-				'thumbnail' => '{{image-espresso}}',
-			),
-		),
-		'attachments' => array(
-			'image-espresso' => array(
-				'post_title' => _x('Espresso', 'Theme starter content', 'pleiades17'),
-				'file' => 'assets/images/espresso.jpg',
-			),
-			'image-sandwich' => array(
-				'post_title' => _x('Sandwich', 'Theme starter content', 'pleiades17'),
-				'file' => 'assets/images/sandwich.jpg',
-			),
-			'image-coffee' => array(
-				'post_title' => _x('Coffee', 'Theme starter content', 'pleiades17'),
-				'file' => 'assets/images/coffee.jpg',
-			),
-		),
-		'options' => array(
-			'show_on_front' => 'page',
-			'page_on_front' => '{{home}}',
-			'page_for_posts' => '{{blog}}',
-		),
-		'theme_mods' => array(
-			'panel_1' => '{{homepage-section}}',
-			'panel_2' => '{{about}}',
-			'panel_3' => '{{blog}}',
-			'panel_4' => '{{contact}}',
-		),
-		'nav_menus' => array(
-			'top' => array(
-				'name' => __('Top Menu', 'pleiades17'),
-				'items' => array(
-					'page_home',
-					'page_about',
-					'page_blog',
-					'page_contact',
-				),
-			),
-			'social' => array(
-				'name' => __('Social Links Menu', 'pleiades17'),
-				'items' => array(
-					'link_yelp',
-					'link_facebook',
-					'link_twitter',
-					'link_instagram',
-					'link_email',
-				),
-			),
-		),
-	)); //add_theme_support('starter-content'...)
 } //function pleiades17_setup()
 add_action('after_setup_theme', 'pleiades17_setup');
 
 // MIN CONTENT WITH
 function pleiades17_content_width() {
-	$content_width = 700;
-	if (pleiades17_is_frontpage()) {
-		$content_width = 1120;
+	$content_width = $GLOBALS['content_width'];
+	// get layout
+	$page_layout = get_theme_mod('page_layout');
+	// check if layout is one column
+	if ('one-column' === $page_layout) {
+		if (pleiades17_is_frontpage()) {
+			$content_width = 644;		
+		} elseif (is_page()) {
+			$content_width = 740;
+		}
 	}
-	// filter content width
-	$GLOBALS['content_width'] = apply_filters('pleiades17_content_width', $content_width);
-}
-add_action('after_setup_theme', 'pleiades17_content_width', 0);
+	// check if is single post and there is no sidebar
+	if (is_single() && !is_active_sidebar('sidebar-1')) {
+		$content_width = 740; 
+	}
+	$GLOBALS['content_width'] = apply_filters('pleiades17_content_width', $content_width); 
+} //pleiades17_content_width()
+add_action('template_redirect', 'pleiades17_content_width', 0);
 
 // WIDGET AREAS
 function pleiades17_widgets_init() {
@@ -184,7 +120,7 @@ function pleiades17_excerpt_more($link) {
 		return $link;
 	}
 	$link = sprintf('<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-		esc_url(get_permalink( get_the_ID())),
+		esc_url(get_permalink(get_the_ID())),
 		sprintf(__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'pleiades17'), get_the_title(get_the_ID()))
 	);
 	return ' &hellip; ' . $link;
@@ -197,57 +133,60 @@ function pleiades17_javascript_detection() {
 }
 add_action('wp_head', 'pleiades17_javascript_detection', 0);
 
-// DISPLAY CUSTOM CSS COLORS (disabled for now)
-/*function pleiades17_colors_css_wrap() {
+// PINGBACK url auto-discovery header
+function pleiades17_pingback_header() {
+	if (is_singular() && pings_open()) {
+		printf('<link rel="pingback" href="%s">' . "\n", get_bloginfo('pingback_url'));
+	}
+} //pleiades17_pingback_header()
+add_action('wp_head', 'pleiades17_pingback_header');
+
+// DISPLAY CUSTOM COLOR CSS
+function pleiades17_colors_css_wrap() {
 	if ('custom' !== get_theme_mod('colorscheme') && !is_customize_preview()) {
 		return;
 	}
 	require_once(get_parent_theme_file_path('/inc/color-patterns.php'));
 	$hue = absint(get_theme_mod('colorscheme_hue', 250));
 ?>
-	<style type="text/css" id="custom-theme-colors" <?php if (is_customize_preview()) { echo 'data-hue="' . $hue . '"'; } ?>>
+	<style type="text/css" id="custom-theme-colors" <?php if (is_customize_preview()) { echo 'data-hue="' . $hue . '"';} ?>>
 		<?php echo pleiades17_custom_colors_css(); ?>
 	</style>
 <?php }
-add_action('wp_head', 'pleiades17_colors_css_wrap');*/
+add_action('wp_head', 'pleiades17_colors_css_wrap');
 
 /********************************************************
 ****************** STYLES & SCRIPTS *********************
 ********************************************************/
 
 function pleiades17_scripts() {
-
 	// MAIN CSS style.css
 	wp_enqueue_style('pleiades17-style', get_stylesheet_uri());
-
 	// Fontawesome
 	wp_enqueue_script('pleiades17-fontawesome', 'https://use.fontawesome.com/b1403a6995.js', array(), '20170109', true);
-
 	// Google Fonts
-	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,400|Source+Sans+Pro:300,400,600');
+	wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700');
 	// Google Maps
 	wp_enqueue_script('pleiades17-googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDjEcnBmAHgm_LfegO9o84NLPAfBLwVjSY', array(), '20161130', true);
-
 	// FlexSlider CSS & JS
 	wp_enqueue_style( 'flexslider-css', get_template_directory_uri() . '/assets/css/flexslider.css');
 	wp_enqueue_script('flexslider-js', get_template_directory_uri() . '/assets/js/jquery.flexslider-min.js', array('jquery'), '', true);
-
+	// Internet Explorer 9 specific stylesheet to fix display issues in the Customizer
+	if (is_customize_preview()) {
+		wp_enqueue_style('pleiades17-ie9', get_theme_file_uri('/assets/css/ie9.css'), array('pleiades17-style'), '1.0');
+	}
 	// Internet Explorer 8 specific stylesheet
 	wp_enqueue_style('pleiades17-ie8', get_theme_file_uri('/assets/css/ie8.css'), array('pleiades17-style'), '1.0');
 	wp_style_add_data('pleiades17-ie8', 'conditional', 'lt IE 9');
-
 	// HTML5 shiv
 	wp_enqueue_script('html5', get_theme_file_uri('/assets/js/html5.js'), array(), '3.7.3');
 	wp_script_add_data('html5', 'conditional', 'lt IE 9');
-
 	// SKIP LINK FOCUS
 	wp_enqueue_script('pleiades17-skip-link-focus-fix', get_theme_file_uri('/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true);
-
 	// SVG
 	$pleiades17_l10n = array(
 		'quote' => pleiades17_get_svg(array('icon' => 'quote-right')),
 	);
-
 	// NAVIGATION
 	if (has_nav_menu('top')) {
 		wp_enqueue_script('pleiades17-navigation', get_theme_file_uri('/assets/js/navigation.js'), array(), '1.0', true);
@@ -255,19 +194,14 @@ function pleiades17_scripts() {
 		$pleiades17_l10n['collapse'] = __('Collapse child menu', 'pleiades17');
 		$pleiades17_l10n['icon'] = pleiades17_get_svg(array('icon' => 'angle-down', 'fallback' => true));
 	}
-
 	// GLOBAL ScreenReaderText
 	wp_enqueue_script('pleiades17-global', get_theme_file_uri('/assets/js/global.js'), array('jquery'), '1.0', true);
-
 	// ScrollTo
 	wp_enqueue_script('jquery-scrollto', get_theme_file_uri('/assets/js/jquery.scrollTo.js'), array('jquery'), '2.1.2', true);
-
 	// Skip Link Focus
 	wp_localize_script('pleiades17-skip-link-focus-fix', 'pleiades17ScreenReaderText', $pleiades17_l10n);
-
 	// Custom JavaScript
-	wp_enqueue_script('pleiades18-app', get_template_directory_uri() . '/assets/js/app.js', array('jquery'), '20170109', true);
-
+	wp_enqueue_script('pleiades18-app', get_theme_file_uri('/assets/js/app.js'), array('jquery'), '20170109', true);
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
@@ -299,7 +233,7 @@ function pleiades17_header_image_tag($html, $header, $attr) {
 add_filter('get_header_image_tag', 'pleiades17_header_image_tag', 10, 3);
 
 // Add custom image sizes attribute to enhance responsive image functionality
-function pleiades17_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function pleiades17_post_thumbnail_sizes_attr($attr, $attachment, $size ) {
 	if (is_archive() || is_search() || is_home()) {
 		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
 	} else {
@@ -374,7 +308,6 @@ require get_parent_theme_file_path('/inc/icon-functions.php');
 			'supports'            => array('title', 'editor', 'thumbnail','excerpt')
 		);
 		register_post_type('servicios', $args);
-
 	} //pleiades17_custom_post_types()
 	add_action('init', 'pleiades17_custom_post_types');
 

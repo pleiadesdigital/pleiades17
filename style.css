@@ -447,14 +447,9 @@ html body #page {
 
 /* line 5, sass/b-layout/_header.scss */
 .site-header {
-  background-color: rgba(186, 85, 211, 0.6);
   position: relative;
 }
-/* line 10, sass/b-layout/_header.scss */
-.site-header .site-branding .wrap {
-  background-color: rgba(186, 85, 211, 0.4);
-}
-/* line 13, sass/b-layout/_header.scss */
+/* line 12, sass/b-layout/_header.scss */
 .site-header .site-branding .wrap .site-branding-text {
   padding: 1em 0px;
   position: relative;
@@ -462,7 +457,7 @@ html body #page {
   transition: margin-bottom 0.2s;
   z-index: 3;
 }
-/* line 19, sass/b-layout/_header.scss */
+/* line 18, sass/b-layout/_header.scss */
 .site-header .site-branding .wrap .site-branding-text .site-title {
   clear: none;
   font-family: Georgia, sans-serif;
@@ -476,18 +471,18 @@ html body #page {
   text-transform: uppercase;
   color: #222;
 }
-/* line 31, sass/b-layout/_header.scss */
+/* line 30, sass/b-layout/_header.scss */
 .site-header .site-branding .wrap .site-branding-text .site-title a {
   text-decoration: none;
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
   color: #222;
 }
-/* line 36, sass/b-layout/_header.scss */
+/* line 35, sass/b-layout/_header.scss */
 .site-header .site-branding .wrap .site-branding-text .site-title a:hover, .site-header .site-branding .wrap .site-branding-text .site-title a:focus {
   opacity: 0.5;
 }
-/* line 42, sass/b-layout/_header.scss */
+/* line 41, sass/b-layout/_header.scss */
 .site-header .site-branding .wrap .site-branding-text .site-description {
   color: #666666;
   font-family: Georgia, sans-serif;
@@ -496,7 +491,7 @@ html body #page {
   margin-bottom: 0px;
 }
 
-/* line 54, sass/b-layout/_header.scss */
+/* line 53, sass/b-layout/_header.scss */
 body.has-header-image .site-title,
 body.has-header-video .site-title,
 body.has-header-image .site-title a,
@@ -504,14 +499,14 @@ body.has-header-video .site-title a {
   color: #fff;
 }
 
-/* line 61, sass/b-layout/_header.scss */
+/* line 60, sass/b-layout/_header.scss */
 body.has-header-image .site-description,
 body.has-header-video .site-description {
   color: #fff;
   opacity: 0.8;
 }
 
-/* line 67, sass/b-layout/_header.scss */
+/* line 66, sass/b-layout/_header.scss */
 .custom-logo-link {
   display: inline-block;
   padding-right: 1em;
@@ -519,38 +514,38 @@ body.has-header-video .site-description {
   width: auto;
 }
 
-/* line 74, sass/b-layout/_header.scss */
+/* line 73, sass/b-layout/_header.scss */
 .custom-logo-link img {
   display: inline-block;
   max-height: 80px;
   width: auto;
 }
 
-/* line 80, sass/b-layout/_header.scss */
+/* line 79, sass/b-layout/_header.scss */
 body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
 body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
   max-height: 200px;
   max-width: 100%;
 }
 
-/* line 86, sass/b-layout/_header.scss */
+/* line 85, sass/b-layout/_header.scss */
 .custom-logo-link a:hover,
 .custom-logo-link a:focus {
   opacity: 0.9;
 }
 
-/* line 91, sass/b-layout/_header.scss */
+/* line 90, sass/b-layout/_header.scss */
 body:not(.title-tagline-hidden) .site-branding-text {
   display: inline-block;
   vertical-align: middle;
 }
 
-/* line 96, sass/b-layout/_header.scss */
+/* line 95, sass/b-layout/_header.scss */
 .custom-header {
   position: relative;
 }
 
-/* line 100, sass/b-layout/_header.scss */
+/* line 99, sass/b-layout/_header.scss */
 .has-header-image.pleiades17-front-page .custom-header,
 .has-header-video.pleiades17-front-page .custom-header,
 .has-header-image.home.blog .custom-header,
@@ -561,7 +556,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
   width: 100%;
 }
 
-/* line 110, sass/b-layout/_header.scss */
+/* line 109, sass/b-layout/_header.scss */
 .custom-header-media {
   bottom: 0;
   left: 0;
@@ -572,7 +567,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
   width: 100%;
 }
 
-/* line 120, sass/b-layout/_header.scss */
+/* line 119, sass/b-layout/_header.scss */
 .custom-header-media:before {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
   background: -moz-linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%);
@@ -593,7 +588,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
   z-index: 2;
 }
 
-/* line 136, sass/b-layout/_header.scss */
+/* line 135, sass/b-layout/_header.scss */
 .has-header-image .custom-header-media img,
 .has-header-video .custom-header-media video,
 .has-header-video .custom-header-media iframe {
@@ -615,7 +610,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
   transform: translateX(-50%) translateY(-50%);
 }
 
-/* line 155, sass/b-layout/_header.scss */
+/* line 154, sass/b-layout/_header.scss */
 .wp-custom-header .wp-custom-header-video-button {
   /* Specificity prevents .color-dark button overrides */
   background-color: rgba(34, 34, 34, 0.5);
@@ -632,7 +627,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
   width: 45px;
 }
 
-/* line 170, sass/b-layout/_header.scss */
+/* line 169, sass/b-layout/_header.scss */
 .wp-custom-header .wp-custom-header-video-button:hover,
 .wp-custom-header .wp-custom-header-video-button:focus {
   /* Specificity prevents .color-dark button overrides */
@@ -641,12 +636,12 @@ body:not(.title-tagline-hidden) .site-branding-text {
   color: #fff;
 }
 
-/* line 177, sass/b-layout/_header.scss */
+/* line 176, sass/b-layout/_header.scss */
 .admin-bar .wp-custom-header-video-button {
   top: 62px;
 }
 
-/* line 181, sass/b-layout/_header.scss */
+/* line 180, sass/b-layout/_header.scss */
 .has-header-image:not(.pleiades17-front-page):not(.home) .custom-header-media img {
   bottom: 0;
   position: absolute;
@@ -659,7 +654,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 
 /* For browsers that support 'object-fit' */
 @supports (object-fit: cover) {
-  /* line 193, sass/b-layout/_header.scss */
+  /* line 192, sass/b-layout/_header.scss */
   .has-header-image .custom-header-media img,
   .has-header-video .custom-header-media video,
   .has-header-video .custom-header-media iframe,
@@ -677,12 +672,12 @@ body:not(.title-tagline-hidden) .site-branding-text {
   }
 }
 /* Hides div in Customizer preview when header images or videos change. */
-/* line 212, sass/b-layout/_header.scss */
+/* line 211, sass/b-layout/_header.scss */
 body:not(.has-header-image):not(.has-header-video) .custom-header-media {
   display: none;
 }
 
-/* line 216, sass/b-layout/_header.scss */
+/* line 215, sass/b-layout/_header.scss */
 .has-header-image.pleiades17-front-page .site-branding,
 .has-header-video.pleiades17-front-page .site-branding,
 .has-header-image.home.blog .site-branding,
@@ -2844,23 +2839,22 @@ F. Media Queries
     max-width: 1000px;
     padding-left: 3em;
     padding-right: 3em;
-    background-color: #fafafa;
   }
 
-  /* line 21, sass/f-media-queries/_mq_layout.scss */
+  /* line 20, sass/f-media-queries/_mq_layout.scss */
   .has-sidebar:not(.error404) #primary {
     float: left;
     width: 58%;
   }
 
-  /* line 25, sass/f-media-queries/_mq_layout.scss */
+  /* line 24, sass/f-media-queries/_mq_layout.scss */
   .has-sidebar #secondary {
     float: right;
     padding-top: 0;
     width: 36%;
   }
 
-  /* line 30, sass/f-media-queries/_mq_layout.scss */
+  /* line 29, sass/f-media-queries/_mq_layout.scss */
   .error404 #primary {
     float: none;
   }
