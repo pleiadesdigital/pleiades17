@@ -1,11 +1,20 @@
-@include breakpoint($iphone) {
+@include breakpoint($movil) { //20em
 	body.customize-partial-edit-shortcuts-shown .site-header .site-title {
 		padding-left: 0;
 	}
-} //breakpoint($iphone)
+} //breakpoint($movil)
 
-@include breakpoint($tablet) {
-	// GALLERY COLUMNS
+@include breakpoint($tablet) { //30em
+	/* Fix image alignment */
+	img.alignleft {
+		float: left;
+		margin-right: 1.5em;
+	}
+	img.alignright {
+		float: right;
+		margin-left: 1.5em;
+	}
+	/* Gallery Columns */
 	.gallery-item {
 		max-width: 25%;
 	}
@@ -23,49 +32,14 @@
 	}
 } //breakpoint($tablet)
 
-@include breakpoint($laptop) {
-	// Widgets
+@include breakpoint($laptop) { //48em
+	/* Widgets */
 	h2.widget-title {
 		font-size: 11px;
 		font-size: 0.6875rem;
 		margin-bottom: 2em;
 	}
-	// Comments
-	#comments {
-		padding-top: 5em;
-	}
-	.comments-title {
-		margin-bottom: 2.5em;
-	}
-	ol.children .children {
-		padding-left: 2em;
-	}
-	// POSTS PAGINATION
-	.nav-links .nav-title {
-		position: relative;
-	}
-	.nav-title-icon-wrapper {
-		position: absolute;
-		text-align: center;
-		width: 2em;
-	}
-	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
-		left: -2em;
-	}
-	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
-		right: -2em;
-	}
-	// Post Formats
-	.format-quote blockquote .icon {
-		left: -1.5em;
-	}
-	// Secondary
-	#secondary {
-		font-size: 14px;
-		font-size: 0.875rem;
-		line-height: 1.6;
-	}
-	// Gallery Columns
+	/* Gallery Columns */
 	.gallery-columns-5 .gallery-item {
 		max-width: 20%;
 	}
@@ -83,12 +57,22 @@
 	}
 } //breakpoint($laptop)
 
-@include breakpoint($desktop) {
-	// COMMENTS
-	.comment-body {
-		margin-left: 0;
-	}
+@include breakpoint($desktop) { //67em
+	
 } //breakpoint($desktop)
+
+@include breakpoint($largedesk) { //79em
+	.has-sidebar .entry-content blockquote.alignleft {
+		margin-left: -20%;
+	}
+	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
+	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
+	.page-two-column .entry-content blockquote.alignright,
+	.pleiades17-front-page .entry-content blockquote.alignright {
+		margin-right: -20%;
+	}
+} //breakpoint($largedesk)
+
 
 @media screen and ( max-width: 48.875em ) and ( min-width: 48em ) {
 	.admin-bar .site-navigation-fixed.navigation-top,
@@ -96,4 +80,3 @@
 		top: 46px;
 	}
 }
-

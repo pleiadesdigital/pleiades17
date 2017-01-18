@@ -1,7 +1,13 @@
+@include breakpoint($movil) { //20em
+	
+} //breakpoint($movil)
 
+@include breakpoint($tablet) { //30em
+	
+} //breakpoint($tablet)
 
-
-@include breakpoint($laptop) {
+@include breakpoint($laptop) { //48em
+	/* Pages */
 	.page.page-one-column .entry-header,
 	.pleiades17-front-page.page-one-column .entry-header,
 	.archive.page-one-column:not(.has-sidebar) .page-header {
@@ -10,8 +16,16 @@
 	.page:not(.home) #content {
 		padding-bottom: 3.25em;
 	}
-	// 404 page
+	/* 404 page */
 	.error404 .page-content {
 		padding-bottom: 9em;
 	}
 } //breakpoint($laptop)
+
+@include breakpoint($desktop) { //67em
+	
+} //breakpoint($desktop)
+
+@include breakpoint($largedesk) { //79em
+	
+} //breakpoint($largedesk)

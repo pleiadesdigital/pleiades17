@@ -1,5 +1,9 @@
+@include breakpoint($movil) { //20em
+	
+} //breakpoint($movil)
 
-@include breakpoint($tablet) {
+@include breakpoint($tablet) { //30em
+	/* Blog Index, Archive, Search */
 	.taxonomy-description {
 		font-size: 14px;
 		font-size: 0.875rem;
@@ -8,17 +12,12 @@
 		font-size: 16px;
 		font-size: 1rem;
 	}
-	// SITE FOOTER
-	.site-footer {
-		font-size: 16px;
-		font-size: 1rem;
-	}
 } //breakpoint($tablet)
 
-@include breakpoint($laptop) {
-	// Posts
+@include breakpoint($laptop) { //48em
+	/* Posts */
 	.site-content {
-		padding: 0px;
+		padding: 5.5em 0 0;
 	}
 	.single-post .entry-title,
 	.page .entry-title {
@@ -42,45 +41,7 @@
 	.post-navigation .nav-next {
 		margin-top: 0;
 	}
-	// Entry Content
-		// without sidebar
-	:not(.has-sidebar) .entry-content blockquote.alignleft {
-		margin-left: -17.5%;
-		width: 48%;
-	}
-	:not(.has-sidebar) .entry-content blockquote.alignright {
-		margin-right: -17.5%;
-		width: 48%;
-	}
-		// with sidebar
-	.has-sidebar .entry-content blockquote.alignleft {
-		margin-left: 0;
-		width: 34%;
-	}
-	.has-sidebar .entry-content blockquote.alignright {
-		margin-right: 0;
-		width: 34%;
-	}
-	.has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
-		margin-right: -72.5%;
-		width: 62%;
-	}
-	// Blog and archive
-	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.pleiades17-front-page.page-two-column .entry-content blockquote.alignleft,
-	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.page-two-column .entry-content blockquote.alignleft {
-		margin-left: -72.5%;
-		width: 62%;
-	}
-	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	.pleiades17-front-page.page-two-column .entry-content blockquote.alignright,
-	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	.page-two-column .entry-content blockquote.alignright {
-		margin-right: 0;
-		width: 36%;
-	}
-	// Blog, Archive, Search
+	/* Blog, archive, search */
 	.sticky .icon-thumb-tack {
 		height: 23px;
 		left: -2.5em;
@@ -137,10 +98,83 @@
 		margin-top: 0;
 		margin-left: 1em;
 	}
+	/* Entry content (without sidebar) */
+	:not(.has-sidebar) .entry-content blockquote.alignleft {
+		margin-left: -17.5%;
+		width: 48%;
+	}
+	:not(.has-sidebar) .entry-content blockquote.alignright {
+		margin-right: -17.5%;
+		width: 48%;
+	}
+	/* Entry content (with sidebar) */
+	.has-sidebar .entry-content blockquote.alignleft {
+		margin-left: 0;
+		width: 34%;
+	}
+	.has-sidebar .entry-content blockquote.alignright {
+		margin-right: 0;
+		width: 34%;
+	}
+	.has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
+		margin-right: -72.5%;
+		width: 62%;
+	}
+	/* Blog and Archive */
+	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
+	.pleiades17-front-page.page-two-column .entry-content blockquote.alignleft,
+	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
+	.page-two-column .entry-content blockquote.alignleft {
+		margin-left: -72.5%;
+		width: 62%;
+	}
+	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
+	.pleiades17-front-page.page-two-column .entry-content blockquote.alignright,
+	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
+	.page-two-column .entry-content blockquote.alignright {
+		margin-right: 0;
+		width: 36%;
+	}
+	/* Post Formats */
+	.format-quote blockquote .icon {
+		left: -1.5em;
+	}
+	/* Comments */
+	#comments {
+		padding-top: 5em;
+	}
+	.comments-title {
+		margin-bottom: 2.5em;
+	}
+	ol.children .children {
+		padding-left: 2em;
+	}
+	/* Posts Pagination */
+	.nav-links .nav-title {
+		position: relative;
+	}
+	.nav-title-icon-wrapper {
+		position: absolute;
+		text-align: center;
+		width: 2em;
+	}
+	.nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
+		left: -2em;
+	}
+	.nav-links .nav-next .nav-title .nav-title-icon-wrapper {
+		right: -2em;
+	}
+	/* Secondary */
+	#secondary {
+		font-size: 14px;
+		font-size: 0.875rem;
+		line-height: 1.6;
+	}
+
 } //breakpoint($laptop)
 
-@include breakpoint($desktop) {
-	// STICKY POSTS
+@include breakpoint($desktop) { //67em
+	/* Sticky posts */
 	.sticky .icon-thumb-tack {
 		font-size: 32px;
 		font-size: 2rem;
@@ -149,7 +183,7 @@
 		top: 0.75em;
 		width: 32px;
 	}
-	// PAGINATION
+	/* Pagination */
 	.page-numbers {
 		display: inline-block;
 	}
@@ -164,16 +198,12 @@
 		position: absolute !important;
 		width: 1px;
 	}
+	/* Comments */
+	.comment-body {
+		margin-left: 0;
+	}
 } //breakpoint($desktop)
 
-@include breakpoint($largedesk) {
-	.has-sidebar .entry-content blockquote.alignleft {
-		margin-left: -20%;
-	}
-	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	.page-two-column .entry-content blockquote.alignright,
-	.pleiades17-front-page .entry-content blockquote.alignright {
-		margin-right: -20%;
-	}
-}
+@include breakpoint($largedesk) { //79em
+	
+} //breakpoint($largedesk)

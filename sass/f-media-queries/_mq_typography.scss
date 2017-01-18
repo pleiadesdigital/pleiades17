@@ -1,11 +1,14 @@
+@include breakpoint($movil) { //20em
+	
+} //breakpoint($movil)
 
-@include breakpoint($tablet) {
+@include breakpoint($tablet) { //30em
+	/* Typography */
 	body,
 	button,
 	input,
 	select,
 	textarea {
-		color: $black;
 		font-size: 18px;
 		font-size: 1.125rem;
 	}
@@ -41,7 +44,7 @@
 	}
 } //breakpoint($tablet)
 
-@include breakpoint($laptop) {
+@include breakpoint($laptop) { //48em
 	body,
 	button,
 	input,
@@ -56,4 +59,12 @@
 		font-size: 13px;
 		font-size: 0.8125rem;
 	}
-}
+} //breakpoint($laptop)
+
+@include breakpoint($desktop) { //67em
+	
+} //breakpoint($desktop)
+
+@include breakpoint($largedesk) { //79em
+	
+} //breakpoint($largedesk)

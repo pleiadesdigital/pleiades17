@@ -1,11 +1,22 @@
+@include breakpoint($movil) { //20em
+	
+} //breakpoint($movil)
 
+@include breakpoint($tablet) { //30em
+	/* Site Footer */
+	.site-footer {
+		font-size: 16px;
+		font-size: 1rem;
+	}
+} //breakpoint($tablet)
 
-@include breakpoint($laptop) {
+@include breakpoint($laptop) { //48em
+	/* Footer */
 	.site-footer {
 		font-size: 14px;
 		font-size: 0.875rem;
 		line-height: 1.6;
-		margin-top: 0px;
+		margin-top: 3em;
 	}
 	.site-footer .widget-column.footer-widget-1 {
 		float: left;
@@ -38,4 +49,10 @@
 	}
 } //breakpoint($laptop)
 
+@include breakpoint($desktop) { //67em
+	
+} //breakpoint($desktop)
 
+@include breakpoint($largedesk) { //79em
+	
+} //breakpoint($largedesk)

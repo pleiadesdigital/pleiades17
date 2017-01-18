@@ -1,39 +1,26 @@
+@include breakpoint($movil) { //20em
+	
+} //breakpoint($movil)
 
-@include breakpoint($tablet) {
+@include breakpoint($tablet) { //30em
+	/* Front Page */
 	.panel-content .wrap {
 		padding-bottom: 2em;
 		padding-top: 3.5em;
 	}
-	.pleiades17-front-page {
-		.site-content {
-			.content-area {
-				.site-main {
-					.panel-content {
-						.wrap {
-							// max-width: 1000px;
-							.entry-header {
-								margin-bottom: 4.5em;
-							} //.entry-header
-							.recent-posts .entry-header {
-								margin-bottom: 4.5em;
-							} //.recent-posts .entry-header
-						} //.wrap
-					} //.panel-content
-				} //.site-main
-			} //.content-area
-		} //.site-content
-	} //.pleiades17-front-page
-
+	.page-one-column .panel-content .wrap {
+		max-width: 740px;
+	}
 	.panel-content .entry-header {
 		margin-bottom: 4.5em;
 	}
 	.panel-content .recent-posts .entry-header {
 		margin-bottom: 0;
 	}
-
 } //breakpoint($tablet)
 
-@include breakpoint($laptop) {
+@include breakpoint($laptop) { //48em
+	/* Front Page */
 	.pleiades17-front-page.has-header-image .site-branding,
 	.pleiades17-front-page.has-header-video .site-branding,
 	.home.blog.has-header-image .site-branding,
@@ -64,7 +51,6 @@
 	.panel-content .wrap {
 		padding-bottom: 4.5em;
 		padding-top: 6em;
-		background: transparent;
 	}
 	.panel-image {
 		height: 100vh;
@@ -82,7 +68,7 @@
 		float: right;
 		width: 58%;
 	}
-	//FRONT PAGE - RECENT POSTS
+	/* Front Page - Recent Posts */
 	.page-two-column .panel-content .recent-posts {
 		clear: right;
 		float: right;
@@ -105,31 +91,12 @@
 		font-size: 26px;
 		font-size: 1.625rem;
 	}
-	// Scroll Down Arrow
-	.site-header .menu-scroll-down {
-		display: block;
-		padding: 1em;
-		position: absolute;
-		right: 0;
-	}
-	.site-header .menu-scroll-down .icon {
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		-ms-transform: rotate(90deg); /* IE 9 */
-		transform: rotate(90deg);
-	}
-	.site-header .menu-scroll-down {
-		color: #fff;
-		top: 2em;
-	}
-	.site-header .navigation-top .menu-scroll-down {
-		color: #767676;
-		top: 0.7em;
-	}
-	.menu-scroll-down:focus {
-		outline: thin dotted;
-	}
-	.menu-scroll-down .icon {
-		height: 18px;
-		width: 18px;
-	}
 } //breakpoint($laptop)
+
+@include breakpoint($desktop) { //67em
+	
+} //breakpoint($desktop)
+
+@include breakpoint($largedesk) { //79em
+	
+} //breakpoint($largedesk)

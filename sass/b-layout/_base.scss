@@ -1,14 +1,27 @@
 html {
-	@include border-box-sizing;
-	body {
-		background: #fff;
-		#page {
-			position: relative;
-			word-wrap: break-word;
-		} //#page
-	} //body
-} //html
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff;
+	/* Fallback for when there is no custom background color defined. */
+}
+
+#page {
+	position: relative;
+	word-wrap: break-word;
+}
 
 .wrap {
 	margin-left: auto;
@@ -16,9 +29,10 @@ html {
 	max-width: 700px;
 	padding-left: 2em;
 	padding-right: 2em;
-	&:after {
-		clear: both;
-		content: "";
-		display: block;
-	} //&:after
-} //.wrap
+}
+
+.wrap:after {
+	clear: both;
+	content: "";
+	display: block;
+}

@@ -1,67 +1,71 @@
-.pleiades17-front-page {
-	.site-content {
-		padding: 0;
-		.content-area {
-			.site-main {
-				.panel-content {
-					position: relative;
-					.wrap {
-						@include container();
-						background-color: $white;
-						padding-bottom: 0.5em;
-						padding-top: 1.75em;
-					} //.wrap
-				} //.panel-content
-			} //.site-main
-		} //.content-area
-	} //.site-content
-} //.pleiades17-front-page
+.pleiades17-front-page .site-content {
+	padding: 0;
+}
 
-//META - EDIT LINK
-.pleiades17-front-page {
-	.pleiades17-panel {
-		overflow: hidden;
-		position: relative;
-		.panel-image {
-			background-position: center center;
-			background-repeat: no-repeat;
-			-webkit-background-size: cover;
-			background-size: cover;
-			position: relative;
-		} //.panel-image
-		.entry-header {
-			.edit-link {
-				display: block;
-				margin: 0.3em 0px 0px;
-				font-size: 22px;
-				font-size: 1.375rem;
-			} //.edit-link
-		} //.entry-header
-	} //.pleiades17-panel
+.pleiades17-panel {
+	overflow: hidden;
+	position: relative;
+}
+
+.panel-image {
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	position: relative;
+}
+
+.panel-image:before {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+100 */ /* FF3.6-15 */
+	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.3)));
+	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
+	bottom: 0;
+	content: "";
+	left: 0;
+	right: 0;
+	position: absolute;
+	top: 100px;
 }
 
 .pleiades17-front-page article:not(.has-post-thumbnail):not(:first-child) {
 	border-top: 1px solid #ddd;
 }
 
-// FRONT PAGE - RECENT POSTS
+.panel-content {
+	position: relative;
+}
 
-.pleiades17-front-page {
-	.panel-content {
-		.wrap {
-			.recent-posts {
-				article {
-					border: 0;
-					color: #333;
-					margin-bottom: 3em;
-					.entry-header {
-						margin-bottom: 1.2em;
-					} //.entry-header
-				} //article
-			} //.recent-posts
-		} //.wrap		
-	} //.panel-content
-} //.pleiades17-front-page
+.panel-content .wrap {
+	padding-bottom: 0.5em;
+	padding-top: 1.75em;
+}
+
+/* Panel edit link */
+
+.pleiades17-panel .edit-link {
+	display: block;
+	margin: 0.3em 0 0;
+}
+
+.pleiades17-panel .entry-header .edit-link {
+	font-size: 14px;
+	font-size: 0.875rem;
+}
+
+/* Front Page - Recent Posts */
+
+.pleiades17-front-page .panel-content .recent-posts article {
+	border: 0;
+	color: #333;
+	margin-bottom: 3em;
+}
+
+.recent-posts .entry-header {
+	margin-bottom: 1.2em;
+}
 
 .page .panel-content .recent-posts .entry-title {
 	font-size: 20px;
@@ -72,6 +76,7 @@
 }
 
 .pleiades17-panel .recent-posts .entry-header .edit-link {
+	color: #222;
 	display: inline-block;
 	font-size: 11px;
 	font-size: 0.6875rem;

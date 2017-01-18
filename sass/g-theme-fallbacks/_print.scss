@@ -1,7 +1,5 @@
 @media print {
-
 	/* Hide elements */
-
 	form,
 	button,
 	input,
@@ -28,52 +26,41 @@
 	.site-info {
 		display: none !important;
 	}
-
 	.entry-footer,
 	#comments,
 	.site-footer,
 	.single-featured-image-header {
 		border: 0;
 	}
-
 	/* Font sizes */
-
 	body {
 		font-size: 12pt;
 	}
-
 	h1 {
 		font-size: 24pt;
 	}
-
 	h2 {
 		font-size: 22pt;
 	}
-
 	h3 {
 		font-size: 17pt;
 	}
-
 	h4 {
 		font-size: 12pt;
 	}
-
 	h5 {
 		font-size: 11pt;
 	}
-
 	h6 {
 		font-size: 12pt;
 	}
-
 	.page .panel-content .entry-title,
 	.page-title,
 	body.page:not(.pleiades17-front-page) .entry-title {
 		font-size: 10pt;
 	}
-
+	
 	/* Layout */
-
 	.wrap {
 		padding-left: 5% !important;
 		padding-right: 5% !important;

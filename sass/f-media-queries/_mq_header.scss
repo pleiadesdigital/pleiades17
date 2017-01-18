@@ -1,25 +1,16 @@
+@include breakpoint($movil) { //20em
+	
+} //breakpoint($movil)
 
-@include breakpoint($tablet) {
-	.site-header {
-		.site-branding {
-			padding: 3em 0;
-			.wrap {
-				.site-branding-text {
-					.site-title {
-						font-size: 36px;
-						font-size: 2.25rem;
-					} //.site-title
-					.site-description {
-						font-size: 18px;
-						font-size: 1.125rem;		
-					}
-				} //.site-branding-text
-			} //.wrap	
-		} //.site-branding
-	} //.site-header
+@include breakpoint($tablet) { //30em
+	/* Site Branding */
+	.site-branding {
+		padding: 3em 0;
+	}
 } //breakpoint($tablet)
 
-@include breakpoint($laptop) {
+@include breakpoint($laptop) { //48em
+	/* Site Branding */
 	.site-branding {
 		margin-bottom: 0;
 	}
@@ -82,4 +73,40 @@
 		font-size: 16px;
 		font-size: 1rem;
 	}
+	/* Scroll down arrow */
+	.site-header .menu-scroll-down {
+		display: block;
+		padding: 1em;
+		position: absolute;
+		right: 0;
+	}
+	.site-header .menu-scroll-down .icon {
+		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+		-ms-transform: rotate(90deg); /* IE 9 */
+		transform: rotate(90deg);
+	}
+	.site-header .menu-scroll-down {
+		color: #fff;
+		top: 2em;
+	}
+	.site-header .navigation-top .menu-scroll-down {
+		color: #767676;
+		top: 0.7em;
+	}
+	.menu-scroll-down:focus {
+		outline: thin dotted;
+	}
+	.menu-scroll-down .icon {
+		height: 18px;
+		width: 18px;
+	}
+
 } //breakpoint($laptop)
+
+@include breakpoint($desktop) { //67em
+	
+} //breakpoint($desktop)
+
+@include breakpoint($largedesk) { //79em
+	
+} //breakpoint($largedesk)
